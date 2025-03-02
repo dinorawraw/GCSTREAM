@@ -1,24 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GC para Streams</title>
-    <style>
-      /* Ensure transparency for OBS */
-      html, body, #root {
-        background: transparent !important;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCSTREAM</title>
+</head>
+<body>
+    <button onclick="openLivePreview('<div style=\'background: rgba(0, 255, 0, 0.5); padding: 20px; color: white;\'>Conteúdo com transparência</div>')">
+        Abrir Live Preview
+    </button>
+
+    <script>
+        function openLivePreview(content) {
+            const encodedContent = encodeURIComponent(content);
+            const previewUrl = `live-preview.html?content=${encodedContent}`;
+            window.open(previewUrl, '_blank');
+        }
+    </script>
+</body>
 </html>
