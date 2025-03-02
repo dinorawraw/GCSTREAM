@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Preview</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: none;
+        }
+        #preview-container {
+            width: 100%;
+            height: 100vh;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #preview-content {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div id="preview-container">
+        <div id="preview-content"></div>
+    </div>
+
+    <script>
+        function loadPreviewContent() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const content = urlParams.get('content');
+
+            if (content) {
+                const previewContent = document.getElementById('preview-content');
+                previewContent.innerHTML = decodeURIComponent(content);
+            } else {
+                console.error('Nenhum conteúdo fornecido para o preview.');
+            }
+        }
+
+        window.onload = loadPreviewContent;
+    </script>
+</body>
+</html>
