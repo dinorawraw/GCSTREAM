@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GCSTREAM Embed - gcrodou.netlify.app</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent !important;
+      overflow: hidden;
+    }
+    #gcCanvas {
+      background: transparent;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gcCanvas"></canvas>
+  
+  <script>
+    // Configurações específicas para o embed
+    const config = {
+      serverUrl: "wss://gcrodou.netlify.app/ws",
+      transparent: true,
+      resolution: 1280
+    }
+  </script>
+  <script src="/gcstream-client.js"></script>
+</body>
+</html>
